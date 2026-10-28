@@ -14,8 +14,8 @@ api_key = st.sidebar.text_input("Enter Gemini API Key:", type="password")
 
 if api_key:
     genai.configure(api_key=api_key)
-    # Using Gemini Flash for fast, efficient performance
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    # Using Gemini 3.5 Flash - latest supported model
+    model = genai.GenerativeModel("gemini-3.5-flash")
 else:
     st.sidebar.warning("Please enter your Gemini API key to unlock the assistant.")
 
@@ -29,7 +29,7 @@ if api_key:
     
     # TAB 1: Chat & Q&A
     with tab1:
-        st.header("Chat with Gemini Flash")
+        st.header("Chat with Gemini 3.5 Flash")
         
         if "messages" not in st.session_state:
             st.session_state.messages = []
